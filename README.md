@@ -31,6 +31,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0009-palindrome-number](https://github.com/Samya-das06/Leetcode/tree/master/0009-palindrome-number) |
 | [0012-integer-to-roman](https://github.com/Samya-das06/Leetcode/tree/master/0012-integer-to-roman) |
 | [0013-roman-to-integer](https://github.com/Samya-das06/Leetcode/tree/master/0013-roman-to-integer) |
+| [1448-maximum-69-number](https://github.com/Samya-das06/Leetcode/tree/master/1448-maximum-69-number) |
 | [2432-number-of-zero-filled-subarrays](https://github.com/Samya-das06/Leetcode/tree/master/2432-number-of-zero-filled-subarrays) |
 ## Hash Table
 |  |
@@ -88,6 +89,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/Samya-das06/Leetcode/tree/master/0011-container-with-most-water) |
+| [1448-maximum-69-number](https://github.com/Samya-das06/Leetcode/tree/master/1448-maximum-69-number) |
 ## Trie
 |  |
 | ------- |
