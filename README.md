@@ -4,6 +4,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/Samya-das06/Leetcode/tree/master/0001-two-sum) |
 | [1402-count-square-submatrices-with-all-ones](https://github.com/Samya-das06/Leetcode/tree/master/1402-count-square-submatrices-with-all-ones) |
 | [2432-number-of-zero-filled-subarrays](https://github.com/Samya-das06/Leetcode/tree/master/2432-number-of-zero-filled-subarrays) |
 ## Dynamic Programming
@@ -18,4 +19,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2432-number-of-zero-filled-subarrays](https://github.com/Samya-das06/Leetcode/tree/master/2432-number-of-zero-filled-subarrays) |
+## Hash Table
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/Samya-das06/Leetcode/tree/master/0001-two-sum) |
 <!---LeetCode Topics End-->
