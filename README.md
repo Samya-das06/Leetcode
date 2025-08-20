@@ -21,6 +21,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/Samya-das06/Leetcode/tree/master/0002-add-two-numbers) |
+| [0007-reverse-integer](https://github.com/Samya-das06/Leetcode/tree/master/0007-reverse-integer) |
 | [2432-number-of-zero-filled-subarrays](https://github.com/Samya-das06/Leetcode/tree/master/2432-number-of-zero-filled-subarrays) |
 ## Hash Table
 |  |
