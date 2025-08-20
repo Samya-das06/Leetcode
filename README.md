@@ -31,6 +31,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0009-palindrome-number](https://github.com/Samya-das06/Leetcode/tree/master/0009-palindrome-number) |
 | [0012-integer-to-roman](https://github.com/Samya-das06/Leetcode/tree/master/0012-integer-to-roman) |
 | [0013-roman-to-integer](https://github.com/Samya-das06/Leetcode/tree/master/0013-roman-to-integer) |
+| [0342-power-of-four](https://github.com/Samya-das06/Leetcode/tree/master/0342-power-of-four) |
 | [1448-maximum-69-number](https://github.com/Samya-das06/Leetcode/tree/master/1448-maximum-69-number) |
 | [2432-number-of-zero-filled-subarrays](https://github.com/Samya-das06/Leetcode/tree/master/2432-number-of-zero-filled-subarrays) |
 ## Hash Table
@@ -51,6 +52,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0002-add-two-numbers](https://github.com/Samya-das06/Leetcode/tree/master/0002-add-two-numbers) |
 | [0010-regular-expression-matching](https://github.com/Samya-das06/Leetcode/tree/master/0010-regular-expression-matching) |
+| [0342-power-of-four](https://github.com/Samya-das06/Leetcode/tree/master/0342-power-of-four) |
 ## String
 |  |
 | ------- |
@@ -108,4 +110,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/Samya-das06/Leetcode/tree/master/0020-valid-parentheses) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0342-power-of-four](https://github.com/Samya-das06/Leetcode/tree/master/0342-power-of-four) |
 <!---LeetCode Topics End-->
