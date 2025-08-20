@@ -19,6 +19,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0005-longest-palindromic-substring](https://github.com/Samya-das06/Leetcode/tree/master/0005-longest-palindromic-substring) |
 | [0010-regular-expression-matching](https://github.com/Samya-das06/Leetcode/tree/master/0010-regular-expression-matching) |
 | [1402-count-square-submatrices-with-all-ones](https://github.com/Samya-das06/Leetcode/tree/master/1402-count-square-submatrices-with-all-ones) |
+| [2882-ways-to-express-an-integer-as-sum-of-powers](https://github.com/Samya-das06/Leetcode/tree/master/2882-ways-to-express-an-integer-as-sum-of-powers) |
 ## Matrix
 |  |
 | ------- |
