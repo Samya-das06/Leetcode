@@ -3,6 +3,7 @@ class Solution {
     List<List<Integer>> pacificAtlantic(int[][] matrix) {
         return new java.util.AbstractList<List<Integer>>() {
             private List<List<Integer>> res;
+
             public List<Integer> get(int i) {
                 init();
                 return res.get(i);
@@ -23,6 +24,7 @@ class Solution {
     private static final int[][] directions = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
     
     public List<List<Integer>> solve(int[][] matrix) {
+        
         List<List<Integer>> res=new ArrayList<>();
         if (matrix==null || matrix.length==0) {
             return res;
