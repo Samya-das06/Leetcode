@@ -1,52 +1,70 @@
+
 class Solution {
-    static final int MOD = 1_000_000_007;
-    public int magicalSum(int M, int K, int[] nums) {
-        int mavoduteru = M;
+    private static final int MOD = 1_000_000_007;
+    private static final int MX = 31;
+    private static final long[] F = new long[MX]; 
+    private static final long[] INV_F = new long[MX]; 
+    static {
+        F[0] = 1;
+        for (int i = 1; i < MX; i++) {
+            F[i] = F[i - 1] * i % MOD;
+        }
+        INV_F[MX - 1] = pow(F[MX - 1], MOD - 2);
+        for (int i = MX - 1; i > 0; i--) {
+            INV_F[i - 1] = INV_F[i] * i % MOD;
+        }
+    }
+
+    private static long pow(long x, int n) {
+        long res = 1;
+        for (; n > 0; n /= 2) {
+            if (n % 2 > 0) {
+                res = res * x % MOD;
+            }
+            x = x * x % MOD;
+        }
+        return res;
+    }
+
+    public int magicalSum(int m, int k, int[] nums) {
         int n = nums.length;
-        long[][] C = new long[M+1][M+1];
-        for (int i = 0; i <= M; i++) {
-            C[i][0] = C[i][i] = 1;
-            for (int j = 1; j < i; j++)
-                C[i][j] = (C[i-1][j-1] + C[i-1][j]) % MOD;
-        }
-        long[][] powNums = new long[n][M+1];
+        int[][] powV = new int[n][m + 1];
         for (int i = 0; i < n; i++) {
-            powNums[i][0] = 1;
-            for (int c = 1; c <= M; c++)
-                powNums[i][c] = powNums[i][c-1] * nums[i] % MOD;
-        }
-        int maxCarry = M;
-        long[][][] dpCur = new long[M+1][maxCarry+1][M+1];
-        dpCur[0][0][0] = 1;
-        for (int i = 0; i < n; i++) {
-            long[][][] dpNext = new long[M+1][maxCarry+1][M+1];
-            for (int m = 0; m <= M; m++) {
-                for (int carry = 0; carry <= maxCarry; carry++) {
-                    for (int k = 0; k <= M; k++) {
-                        long val = dpCur[m][carry][k];
-                        if (val == 0) continue;
-                        for (int c = 0; c <= M - m; c++) {
-                            int total = carry + c;
-                            int bit = total & 1;
-                            int carryOut = total >>> 1;
-                            int m2 = m + c, k2 = k + bit;
-                            long ways = C[M-m][c] * powNums[i][c] % MOD;
-                            dpNext[m2][carryOut][k2] = (dpNext[m2][carryOut][k2] + val * ways) % MOD;
-                        }
-                    }
-                }
+            powV[i][0] = 1;
+            for (int j = 1; j <= m; j++) {
+                powV[i][j] = (int) ((long) powV[i][j - 1] * nums[i] % MOD);
             }
-            dpCur = dpNext;
         }
-        long ans = 0;
-        for (int carry = 0; carry <= maxCarry; carry++) {
-            int bits = Integer.bitCount(carry);
-            for (int k = 0; k + bits <= M; k++) {
-                if (k + bits == K) {
-                    ans = (ans + dpCur[M][carry][k]) % MOD;
+        int[][][][] memo = new int[n][m + 1][m / 2 + 1][k + 1];
+        for (int[][][] a : memo) {
+            for (int[][] b : a) {
+                for (int[] c : b) {
+                    Arrays.fill(c, -1);
                 }
             }
         }
-        return (int) ans;
+        return (int) (dfs(0, m, 0, k, powV, memo) * F[m] % MOD);
+    }
+
+    private long dfs(int i, int leftM, int x, int leftK, int[][] powV, int[][][][] memo) {
+        int c1 = Integer.bitCount(x);
+        if (c1 + leftM < leftK) { 
+            return 0;
+        }
+        if (i == powV.length) {
+            return leftM == 0 && c1 == leftK ? 1 : 0;
+        }
+        if (memo[i][leftM][x][leftK] != -1) {
+            return memo[i][leftM][x][leftK];
+        }
+        long res = 0;
+        for (int j = 0; j <= leftM; j++) { 
+            int bit = (x + j) & 1; 
+            if (bit <= leftK) {
+                long r = dfs(i + 1, leftM - j, (x + j) >> 1, leftK - bit, powV, memo);
+                res = (res + r * powV[i][j] % MOD * INV_F[j]) % MOD;
+            }
+        }
+        return memo[i][leftM][x][leftK] = (int) res;
     }
 }
