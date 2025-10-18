@@ -10,7 +10,6 @@ class Solution {
                 prev = start;
                 distinctCount++;
             }
-            
         }
         return distinctCount;
     }
