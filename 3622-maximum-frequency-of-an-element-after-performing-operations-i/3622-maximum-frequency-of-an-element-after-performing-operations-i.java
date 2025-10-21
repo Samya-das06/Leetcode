@@ -1,28 +1,33 @@
 class Solution {
     public int maxFrequency(int[] nums, int k, int numOperations) {
-        int max = Arrays.stream(nums).max().getAsInt();
-        int n = max + k + 2;
-        int[] freq = new int[n];
-        for (int num : nums) {
-            freq[num]++;
+       int max = 0, min = Integer.MAX_VALUE;
+        for (int i : nums) {
+            max = Math.max(max, i);
+            min = Math.min(min, i);
         }
-        int[] pre = new int[n];
-        pre[0] = freq[0];
-        for (int i = 1; i < n; i++) {
-            pre[i] = pre[i - 1] + freq[i];
+        int[] freq = new int[max + 1];
+        int[] prefix = new int[max + 1];
+        for (int i : nums) {
+            freq[i]++;
         }
-        int result = 0; 
-        for (int i = 0; i < n; i++) {
-            if (freq[i] == 0 && numOperations == 0) {
-                continue;
+        for (int i = min; i <= max; i++) {
+            prefix[i] = prefix[i - 1] + freq[i];
+        }
+        int ans = 0;
+        for (int i = min; i <= max; i++) {
+            int low = 0;
+            if (i - k - 1 > 0) {
+                low = prefix[i - k - 1];
             }
-            int l = Math.max(0, i - k);
-            int r = Math.min(n - 1, i + k);
-            int tot = pre[r] - (l > 0 ? pre[l - 1] : 0);
-            int adj = tot - freq[i];
-            int val = freq[i] + Math.min(numOperations, adj);
-            result = Math.max(result, val);
+            int high = 0;
+            if (i + k <= max) {
+                high = prefix[i + k];
+            } else {
+                high = prefix[max];
+            }
+            int toChange = high - low - freq[i];
+            ans = Math.max(ans, freq[i] + (toChange >= numOperations ? numOperations : toChange));
         }
-        return result;
+        return ans;
     }
 }
