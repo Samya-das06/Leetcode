@@ -1,28 +1,19 @@
 class Solution {
-  public int findFinalValue(int[] nums, int original) {
-    Arrays.sort(nums);
-    while (true) {
-      int left = 0, right = nums.length - 1;
-      boolean found = false;
-      while (left <= right) {
-        int mid = left + (right - left) / 2;
-        if (nums[mid] == original) {
-          found = true;
-          break;
-        } else if (nums[mid] < original) {
-          left = mid + 1;
-        } else {
-          right = mid - 1;
+    public int findFinalValue(int[] nums, int original) {
+        boolean x=true;
+        while(x){
+            x=found(nums,original);
+            original*=2;
         }
-      }
-
-      if (found) {
-        original *= 2;
-      } else {
-        break;
-      }
+        return original/2;
+        
     }
-
-    return original;
-  }
+    public boolean found(int [] nums,int var){
+        for(int ele:nums){
+            if(ele==var){
+                return true;
+            }
+        }
+        return false;
+    }
 }
